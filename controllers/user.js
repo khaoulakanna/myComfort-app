@@ -1,16 +1,7 @@
 const User = require("../models/user");
-const nodemailer = require("nodemailer");
+
 const sendGridTransport = require("nodemailer-sendgrid-transport");
 
-
-const transporter = nodemailer.createTransport(
-    sendGridTransport({
-      auth: {
-        api_key:
-          "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",
-      },
-    })
-  );
 
 
 exports.postUserData = (req, res, next) => {
@@ -35,12 +26,6 @@ exports.postUserData = (req, res, next) => {
     .then((result) => {
       console.log(result);
       console.log("User Added Successfully!");
-      return transporter.sendMail({
-        to: email,
-        from: "myComfortApp@gmail.com",
-        subject: "Inscription réussite  🎉",
-        html: `<h5>Mr/Mme ${nom}, votre inscription a été bien enregistrée. Nous vous remercions pour votre collaboration.</h5>`,
-    })
     }).then((result)=> {
       console.log('Email sent.')
     })
