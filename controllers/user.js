@@ -1,6 +1,6 @@
 const User = require("../models/user");
 
-const sendGridTransport = require("nodemailer-sendgrid-transport");
+
 
 
 
