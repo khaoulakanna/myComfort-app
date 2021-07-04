@@ -4,23 +4,30 @@ const Schema = mongoose.Schema;
 
 const dataSchema = new Schema(
   {
-    user: {
-      email: String
-    },
+    user: 
+      {
+        email: Schema.Types.String,
+      }
+    ,
     zoneId: {
       type: Number,
+      required: true
     },
     climat: {
       type: String,
+      required: true
     },
     activity: {
       type: String,
+      required: true
     },
     clothing: {
       type: String,
+      required: true
     },
     date: {
       type: Date,
+      required: true
     },
   },
   {

@@ -4,22 +4,28 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     email : {
-        type : String
+        type : String,
+        required: true
     },
     nom : {
-        type: String
+        type: String,
+        required: true
     },
     prenom : {
-        type: String
+        type: String,
+        required: true
     },
     dateNaissance : {
-        type: Date
+        type: Date,
+        required: true
     },
     genre: {
-        type: String
+        type: String,
+        required: true
     },
     ville : {
-        type: String
+        type: String,
+        required: true
     }
 }, {
     timestamps: true
